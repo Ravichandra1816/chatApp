@@ -7,11 +7,18 @@ const LeftSideBar = () => {
       <div className="p-[20px]">
         <div className="flex justify-between items-center">
           <img src={assets.logo} className="max-w-[140px]" />
-          <div>
+          <div className="relative pt-2.5 pb-2.5 menu">
             <img
               src={assets.menu_icon}
-              className="max-h-[20px] opacity-[0.6] cursor-pointer"
+              className="max-h-[20px] opacity-[0.6] cursor-pointer "
             />
+            <div className="absolute w-[130px] top-full right-0 p-3 rounded-sm bg-white text-black hidden  sub-menu ">
+              <div>
+                <p className="text-md cursor-pointer">Edit Profile</p>
+                <hr className="border-none h-0.5 bg-[#a4a4a4] my-2" />
+                <p className="text-md cursor-pointer">Logout</p>
+              </div>
+            </div>
           </div>
         </div>
         <div className="flex items-center p-[10px] gap-4 mt-6 bg-[#002670]">

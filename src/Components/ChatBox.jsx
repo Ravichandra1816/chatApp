@@ -15,9 +15,9 @@ const ChatBox = () => {
         <img src={assets.help_icon} className="w-[25px]" />
       </div>
 
-      <div className="height flex flex-col-reverse overflow-y-scroll pb-[50px]">
+      <div className="height flex flex-col-reverse overflow-y-scroll pb-[50px] px-1 py-1">
         {/* // sender massge */}
-        <div className="flex items-end justify-end gap-1.5 py-3">
+        <div className="flex items-end justify-end gap-1.5 py-3 px-3">
           <p className="text-white bg-[#077eff] p-2 max-w-[200px] text-lg rounded-t-[8px] rounded-b-[8px] rounded-br-none  mb-[30px]">
             gb ghiahkbt ihgiqetqh;hqhrg{" "}
           </p>
@@ -29,10 +29,10 @@ const ChatBox = () => {
             <p>4:50PM</p>
           </div>
         </div>
-        <div className="flex items-end justify-end gap-1.5 py-3">
+        <div className="flex items-end justify-end gap-1.5 py-3 px-3">
           <img
             src={assets.pic1}
-            className="max-w-[230px] mb-[30px] rounded-lg"
+            className="max-w-[230px] mb-[30px] rounded-lg "
           />
           <img
             src={assets.profile_img}
@@ -41,14 +41,14 @@ const ChatBox = () => {
           <p>4:50PM</p>
         </div>
         {/* reciver massge */}
-        <div className="flex items-end justify-start gap-1.5 py-3 flex-row-reverse">
+        <div className="flex items-end justify-end gap-1.5 py-3  px-3 flex-row-reverse">
           <p className="text-white bg-[#077eff] p-2 max-w-[200px] text-lg rounded-t-[8px] rounded-bl-none rounded-l-[8px] rounded-r-[8px] mb-[30px]">
             gb ghiahkbt ihgiqetqh;hqhrg{" "}
           </p>
           <div className="items-center text-lg">
             <img
               src={assets.profile_img}
-              className="w-[27px] aspect-1/1 rounded-2xl"
+              className="w-[27px] aspect-square rounded-2xl"
             />
             <p>4:50PM</p>
           </div>
