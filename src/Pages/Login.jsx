@@ -1,18 +1,35 @@
 import React, { useState } from "react";
-// import "./Login.css";
 import assets from "../assets/assets";
+import { login, Signup } from "../Config/Firebase";
 
 const Login = () => {
   const [currentState, setCurrentState] = useState("Sign up");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    if (currentState === "Sign up") {
+      Signup(username, email, password);
+    } else {
+      login(email, password);
+    }
+  };
   return (
     <div className="bglogin cover flex items-center justify-evenly min-h-[100vh] ">
       <img src={assets.logo_big} className="w-[20vh] h-[150px]" />
-      <form className="bg-white p-[20px] flex flex-col gap-[20px] rounded-xl">
+      <form
+        onSubmit={onSubmitHandler}
+        className="bg-white p-[20px] flex flex-col gap-[20px] rounded-xl"
+      >
         <h2 className="text-2xl font-bold flex items-center justify-center">
           {currentState}
         </h2>
         {currentState === "Sign up" ? (
           <input
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
             type="text"
             placeholder="Username "
             required
@@ -21,12 +38,16 @@ const Login = () => {
         ) : null}
 
         <input
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
           type="email"
           placeholder="Email address"
           required
           className="p-[10px] border-2 border-[#c9c9c9] rounded-xl outline-[#077eff]"
         />
         <input
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
           type="password"
           placeholder="Passwors"
           required

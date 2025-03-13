@@ -1,5 +1,8 @@
 import React from "react";
 import assets from "../assets/assets";
+// import { logout } from "../Config/Firebase";
+// import {logout} from "../../Config/Firebase"
+import { logout } from "../Config/Firebase"
 
 const RightSideBar = () => {
   return (
@@ -32,11 +35,11 @@ const RightSideBar = () => {
             src={assets.pic3}
             className="w-[80px] rounded-lg cursor-pointer"
           />
-          <img
+          <img 
             src={assets.pic4}
             className="w-[80px] rounded-lg cursor-pointer"
           />
-          <img
+          <img 
             src={assets.pic1}
             className="w-[80px] rounded-lg cursor-pointer"
           />
@@ -46,9 +49,10 @@ const RightSideBar = () => {
           />
         </div>
       </div>
-      <button className="absolute left-[20%] bottom-[20px] translate-x[-50%] bg-[#077eff] text-white border-none text-[12px] font-[300] py-[10px] px-[65px] rounded-[20px] cursor-pointer ">
+      <button className="absolute left-[20%] bottom-[20px] translate-x[-50%] bg-[#077eff] text-white border-none text-[12px] font-[300] py-[10px] px-[65px] rounded-[20px] cursor-pointer " onClick={()=>logout()}>
         Logout
       </button>
+      {/* <button onClick={()=>logout}></button> */}
     </div>
   );
 };
